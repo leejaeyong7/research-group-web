@@ -37,7 +37,7 @@ clean:
 	$(RM) -r _site _includes/pubs.html
 
 DEPLOY_PATH ?= $(HOME_PATH)/public_html/
-RSYNC := rsync --compress --recursive --checksum --itemize-changes --delete -e ssh
+RSYNC := rsync --compress --recursive --checksum --itemize-changes -e ssh
 
 deploy: clean build
 	$(RSYNC) _site/ $(DEPLOY_PATH)
